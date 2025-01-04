@@ -23,6 +23,7 @@ const App = () => {
 
   return (
     <div>
+      <h1 className="mb-5 text-center">Expense Tracker</h1>
       <Form onSubmit={handleSubmit}></Form>
       <Filter onChange={handleChange}></Filter>
       <Table data={items} filter={selectedText} deleteItem={removeItem}></Table>

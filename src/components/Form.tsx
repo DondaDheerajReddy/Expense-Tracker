@@ -11,9 +11,19 @@ const schema = z.object({
     .string()
     .min(3, { message: "Description should be atleast 3 characters." }),
   amount: z.number({ invalid_type_error: "Amount is required" }).min(0),
-  category: z.enum(["Groceries", "Utilities", "Entertainment"], {
-    message: "Category is required.",
-  }),
+  category: z.enum(
+    [
+      "Groceries",
+      "Utilities",
+      "Entertainment",
+      "Education",
+      "Healthcare",
+      "Other",
+    ],
+    {
+      message: "Category is required.",
+    }
+  ),
 });
 
 export type FormData = z.infer<typeof schema>;
@@ -74,6 +84,9 @@ const Form = ({ onSubmit }: Props) => {
             <option value="Groceries">Groceries</option>
             <option value="Utilities">Utilities</option>
             <option value="Entertainment">Entertainment</option>
+            <option value="Education">Education</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Other">Other...</option>
           </select>
           {errors.category && (
             <p className="text-danger">{errors.category.message}</p>

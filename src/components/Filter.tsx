@@ -19,6 +19,9 @@ const Filter = ({ onChange }: Props) => {
         <option value="Groceries">Groceries</option>
         <option value="Utilities">Utilities</option>
         <option value="Entertainment">Entertainment</option>
+        <option value="Education">Education</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Other">Other...</option>
       </select>
     </div>
   );
